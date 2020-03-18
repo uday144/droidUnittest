@@ -90,41 +90,41 @@
             android:id="@+id/addMore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:text="Add More "/>
 
         <Button
             android:id="@+id/clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:text="Clear Array"/>
 
         <EditText
             android:id="@+id/arraytxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:text="Array: Empty Array"/>
         <EditText
             android:id="@+id/delta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:layout_marginTop="24dp"
-            android:hint="Enter Delta 2 "
+            android:layout_marginTop="10dp"
+            android:hint="Enter Delta "
             />
         <Button
             android:id="@+id/pairBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:text="Find the pairs"/>
         <EditText
             android:id="@+id/pairsResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:text="Result will visible here"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

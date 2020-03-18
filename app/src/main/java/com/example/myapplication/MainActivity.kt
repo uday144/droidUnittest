@@ -39,10 +39,12 @@ class MainActivity : AppCompatActivity() {
     private fun checkForPair(){
         if(arraylist.size <= 1){
             pairsResult.setText("Int Array should have minimum two number")
+            pairsResult.setTextColor(Color.RED)
             return
         }
         if(delta.text.isEmpty()){
             pairsResult.setText("Please enter Delta")
+            pairsResult.setTextColor(Color.RED)
             return
         }
         pairsResult.setText(("Pairs: "+countPairsWithDiffK(arraylist, delta.text.toString().toInt())))
