@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             str2.chars().sorted().toArray())
     }
 
-    fun countPairsWithDiffK(arr: ArrayList<Int>, k: Int): Int {
+    private fun countPairsWithDiffK(arr: ArrayList<Int>, k: Int): Int {
         var count = 0
         for (i in 0 until arr.size) {
             for (j in i + 1 until arr.size)
