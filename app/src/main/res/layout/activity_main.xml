@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="SUNCORP TECHNICAL TEST"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/anagrams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anagrams"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintTop_toBottomOf="@id/label"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <Button
+        android:id="@+id/pairs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find the pairs"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintTop_toBottomOf="@id/label"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <LinearLayout
+        android:id="@+id/anagramslayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/anagrams"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical">
+      <EditText
+          android:id="@+id/anagramsTxt1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:hint="Enter text 1 "
+          />
+        <EditText
+            android:id="@+id/anagramsTxt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Enter text 2 "
+            />
+        <Button
+            android:id="@+id/anagramsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Check Anagrams"/>
+        <EditText
+            android:id="@+id/anagramsResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Result will visible here"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/pairslayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/pairs"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter number "
+            android:inputType="number"
+            />
+        <Button
+            android:id="@+id/addMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Add More "/>
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Clear Array"/>
+
+        <EditText
+            android:id="@+id/arraytxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Array: Empty Array"/>
+        <EditText
+            android:id="@+id/delta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_marginTop="24dp"
+            android:hint="Enter Delta 2 "
+            />
+        <Button
+            android:id="@+id/pairBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Find the pairs"/>
+        <EditText
+            android:id="@+id/pairsResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Result will visible here"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
