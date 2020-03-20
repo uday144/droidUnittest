@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">SunCorp Technical Test</string>
+    <string name="empty_array">Array: Empty Array</string>
+    <string name="min_num">Int Array should have minimum two number</string>
+    <string name="enter_delta">Please enter Delta</string>
+    <string name="enter_string">Please Enter String in Both Fields</string>
+    <string name="anagrams">Strings are Anagrams</string>
+    <string name="non_anagrams">Strings are Not Anagrams</string>
+    <string name="enter_num">Enter number</string>
 </resources>

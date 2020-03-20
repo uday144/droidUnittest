@@ -5,73 +5,93 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SunCorpView{
     var arraylist = ArrayList<Int>()
+    private lateinit var presenter: SunCorpPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        anagrams.setOnClickListener {
-            anagramslayout.visibility = View.VISIBLE
-            pairslayout.visibility = View.GONE
-        }
-        pairs.setOnClickListener {
-            pairslayout.visibility = View.VISIBLE
-            anagramslayout.visibility = View.GONE
-        }
-
-        anagramsBtn.setOnClickListener { checkForAnagrams() }
-        addMore.setOnClickListener {
-            var array = ""
-            arraylist.add(number.text.toString().toInt())
-            for(i in arraylist) array = array + ", " + i
-            arraytxt.setText(array.substring(1))
-        }
-        clear.setOnClickListener { arraylist.clear()
-            arraytxt.setText("Array: Empty Array")
-        }
-        pairBtn.setOnClickListener { checkForPair() }
-
+        presenter = SunCorpPresenter(this)
+        pairBtn.setOnClickListener { presenter.checkForPair()}
+        anagramsBtn.setOnClickListener { presenter.checkForAnagrams() }
+        addMore.setOnClickListener { presenter.addMore() }
     }
 
-    private fun checkForPair(){
-        if(arraylist.size <= 1){
-            pairsResult.setText("Int Array should have minimum two number")
-            pairsResult.setTextColor(Color.RED)
-            return
-        }
-        if(delta.text.isEmpty()){
-            pairsResult.setText("Please enter Delta")
-            pairsResult.setTextColor(Color.RED)
-            return
-        }
-        pairsResult.setText(("Pairs: "+countPairsWithDiffK(arraylist, delta.text.toString().toInt())))
+    override fun setPairResult(resId: Int) {
+        pairsResult.setText(resId)
     }
 
-    private fun checkForAnagrams(){
-      if(anagramsTxt1.text.isNotEmpty() && anagramsTxt2.text.isNotEmpty() ){
-          var result = if(isAnagram(anagramsTxt1.text.toString(), anagramsTxt2.text.toString()))  "Strings are Anagrams" else "Strings are Not Anagrams"
-          anagramsResult.setText(result)
-      } else {
-          anagramsResult.setText("Please Enter String in Both Fields")
-          anagramsResult.setTextColor(Color.RED)
-      }
+    override fun setAnagramResult(resId : Int) {
+        anagramsResult.setText(resId)
     }
 
-    private fun isAnagram(str1: String, str2: String): Boolean{
-        return Arrays.equals(str1.chars().sorted().toArray(),
-            str2.chars().sorted().toArray())
+    fun showAnagramsView(v: View){
+        anagramslayout.visibility = View.VISIBLE
+        pairslayout.visibility = View.GONE
     }
 
-    private fun countPairsWithDiffK(arr: ArrayList<Int>, k: Int): Int {
-        var count = 0
-        for (i in 0 until arr.size) {
-            for (j in i + 1 until arr.size)
-                if (arr[i] - arr[j] == k || arr[j] - arr[i] == k)
-                    count++
-        }
-        return count
+    fun showPairView(v: View){
+        pairslayout.visibility = View.VISIBLE
+        anagramslayout.visibility = View.GONE
+    }
+
+    fun clearArray(v: View){
+        arraylist.clear()
+        arraytxt.setText(getString(R.string.empty_array))
+    }
+
+    override fun setArrayText(resId : Int) {
+        arraytxt.setText(resId)
+    }
+
+    override fun setArrayText(str : String) {
+        arraytxt.setText(str)
+    }
+
+    override fun getStr1(): String {
+        return anagramsTxt1.text.toString()
+    }
+
+    override fun getStr2(): String {
+        return anagramsTxt2.text.toString()
+    }
+
+    override fun getIntArray(): ArrayList<Int> {
+        return arraylist
+    }
+
+    override fun getDelta(): Int {
+        return delta.text.toString().toInt()
+    }
+
+    override fun isDeltaNonEmpty(): Boolean {
+        return  delta.text.isNotEmpty()
+    }
+
+    override fun isStr1NonEmpty(): Boolean {
+        return  anagramsTxt1.text.isNotEmpty()
+    }
+
+    override fun isStr2NonEmpty(): Boolean {
+        return  anagramsTxt2.text.isNotEmpty()
+    }
+
+    override fun isNumberNonEmpty(): Boolean {
+        return  number.text.isNotEmpty()
+    }
+
+    override fun getNumber(): Int {
+        return number.text.toString().toInt()
+    }
+
+    override fun addNumToArray(num: Int) {
+        arraylist.add(num)
+    }
+
+    override fun setPairResult(str: String) {
+        pairsResult.setText(str)
     }
 }
