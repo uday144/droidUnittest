@@ -8,7 +8,7 @@ class SunCorpPresenter(view : SunCorpView) {
             view.setPairResult(R.string.min_num)
             return
         }
-        if(view.isDeltaNonEmpty()) view.setPairResult(SunCorpUtils.countPairsWithDiffK(view.getIntArray(), view.getDelta()).toString())
+        if(view.isDeltaNonEmpty()) view.setPairResult(SunCorpUtils.countPairsWithDiffDelta(view.getIntArray(), view.getDelta()).toString())
            else view.setPairResult(R.string.enter_delta)
     }
 

@@ -4,11 +4,11 @@ import java.util.*
 
 object SunCorpUtils {
 
-     fun countPairsWithDiffK(arr: ArrayList<Int>, k: Int): Int {
+     fun countPairsWithDiffDelta(arr: ArrayList<Int>, delta: Int): Int {
         var count = 0
         for (i in 0 until arr.size) {
             for (j in i + 1 until arr.size)
-                if (arr[i] - arr[j] == k || arr[j] - arr[i] == k)
+                if (arr[i] - arr[j] == delta || arr[j] - arr[i] == delta)
                     count++
         }
         return count
