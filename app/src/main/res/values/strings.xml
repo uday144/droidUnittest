@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SunCorp Technical Test</string>
+    <string name="app_name">Android Unit Test</string>
     <string name="empty_array">Array: Empty Array</string>
     <string name="min_num">Int Array should have minimum two number</string>
     <string name="enter_delta">Please enter Delta</string>

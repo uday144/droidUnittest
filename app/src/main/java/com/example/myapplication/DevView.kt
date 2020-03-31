@@ -2,7 +2,7 @@ package com.example.myapplication
 
 import java.util.ArrayList
 
-interface SunCorpView {
+interface DevView {
 
     fun setPairResult(resId : Int)
 

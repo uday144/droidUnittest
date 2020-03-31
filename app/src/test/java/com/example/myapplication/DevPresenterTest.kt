@@ -10,18 +10,18 @@ import org.mockito.Mockito.*
 
 
 @RunWith(MockitoJUnitRunner::class)
-class SunCorpPresenterTest {
+class DevPresenterTest {
 
     @Mock
-    lateinit var view: SunCorpView
+    lateinit var view: DevView
 
-    lateinit var presenter: SunCorpPresenter
+    lateinit var presenter: DevPresenter
 
     @Before
     @Throws(Exception::class)
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        presenter = SunCorpPresenter(view)
+        presenter = DevPresenter(view)
     }
 
 

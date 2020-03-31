@@ -9,7 +9,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 @RunWith(MockitoJUnitRunner::class)
-class SuncorpUtilsTest {
+class DevUtilsTest {
     @Test
     fun strAreAnagram() {
        val str1 = "silent"

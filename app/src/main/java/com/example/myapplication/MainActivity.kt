@@ -1,20 +1,18 @@
 package com.example.myapplication
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.File
 import java.util.*
 
-class MainActivity : AppCompatActivity(), SunCorpView{
+class MainActivity : AppCompatActivity(), DevView{
     var arraylist = ArrayList<Int>()
-    private lateinit var presenter: SunCorpPresenter
+    private lateinit var presenter: DevPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter = SunCorpPresenter(this)
+        presenter = DevPresenter(this)
         pairBtn.setOnClickListener { presenter.checkForPair()}
         anagramsBtn.setOnClickListener { presenter.checkForAnagrams() }
         addMore.setOnClickListener { presenter.addMore() }

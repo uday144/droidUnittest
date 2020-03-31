@@ -1,7 +1,7 @@
 package com.example.myapplication
 
-class SunCorpPresenter(view : SunCorpView) {
-    var view: SunCorpView = view
+class DevPresenter(view : DevView) {
+    var view: DevView = view
 
     fun checkForPair(){
         if(view.getIntArray().size <= 1){
